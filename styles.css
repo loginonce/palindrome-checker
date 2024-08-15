@@ -1,4 +1,4 @@
-* {
+*, ::before, ::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,111 +6,165 @@
 }
 
 :root {
+  --text: #f5f6f7;
+  --main: #BB3B6C;
+  --gradient: #622774;
+  --golden-yellow: #C53364;
+  --accent: #FCE38A;
+  --shadow: #FFFFF7;
   font-size: 16px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  * {
-  scroll-behavior: smooth;
-  }
+  font-family: "Bitter", serif;
 }
 
 body {
-    font-family: "Rubik", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 1.1rem;
-    color: #182cd4;
-    background-color: #ffffff;
-}
-
-header {
-  justify-content: center;
-  padding-top: 10px;
-  margin-top: 10px;
-}
-
-.title {
-    font-family: "Rubik", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 800;
-    font-style: normal;
-    font-size: 2rem;
-    color: #182cd4;
-    text-align: center;
-    padding: 10px 0;
-}
-
-.container {
+  background-image: linear-gradient(to bottom right, var(--gradient), var(--golden-yellow));
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text);
   width: 100%;
-  min-height: 100vh;
-  position: relative;
+  margin-top: 40px;
+  margin-bottom: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 
-.input-palindrome {
-  width: min(100vw, 450px);
-  min-height: 100px;
-  border-radius: 12px;
+h1, h3, p {
+  margin: 20px;
+}
+
+.whole {
+  max-width: 420px;
+}
+
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 20px;
-  margin: 0;
-  background-color: #c4fa6f;
-  box-shadow: 0 6px #90BE6D;
-}
-
-label {
-  color: #182cd4;
+  text-align: center;
   margin: 20px;
 }
 
-#text-input {
+.glass {
+  background: rgba(255, 255, 255, 0.26);
+  border-radius: 12px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.main {
+  padding: 20px;
+}
+
+#search-input {
   height: 30px;
   width: 250px;
   text-align: center;
   font-size: 1.1rem;
   margin: 10px;
   border: none;
-  border-radius: 8px;
-  border-bottom-width: medium;
-  border-bottom-style: none;
-  border-bottom-color: currentcolor;
-  background-color: 
+  border-radius: 4px;
+  border-bottom-width: medium; border-bottom-style: none;
 }
 
 button {
-  width: 90px;
-  height: 44px;
+  height: 30px;
+  width: 250px;
+  margin-bottom: 20px;
+  background-color: var(--main);
+  color: var(--text);
+  font-weight: 800px;
   border: none;
-  padding: 10px;
-  border-radius: 12px;
-  background-color: #3a3f47;
-  color: #Eeeeee;
+  border-radius: 4px;
   cursor: pointer;
-  font-weight: 800;
-  font-family: "Rubik", sans-serif;
 }
 
-.results {
-  font-weight: 600;
+.info {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.output {
+  margin: 10px;
+  padding: 5px;
+  width: 90%;
+  border-radius: 8px;
+  background-color: var(--shadow);
+  color: var(--gradient);
+  justify-content: center;
+  display: flex;
+}
+
+.contain {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+  align-items: center;
+}
+
+.name-id {
+  height: 28px;
+  font-size: 1.1em;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.size {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+}
+
+#types {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.type {
+  width: 66px;
+  padding: 5px;
+  font-size: 0.7rem;
   text-align: center;
-  width: min(100vw, 450px);
-  min-height: 100px;
-  border-radius: 12px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  background-color: var(--accent);
+}
+
+.sprite-container {
+  flex-grow: 3;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  padding: 50px;
+}
+
+#sprite {
+  width: 180px;
+}
+
+.pokemon-details {
   margin: 20px;
-  color: #182cd4;
-  background-color: #dddddd;
-  box-shadow: 0 6px #cccccc;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 12;
+  width: 100%;
+  font-size: 1 rem;
+  color: var(--gradient);
+  background-color: var(--accent);
+}
+
+tr {
+border-bottom: 2px solid var(--text);
 }
